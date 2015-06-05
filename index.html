@@ -8,23 +8,31 @@
 	<div id="contentBox" style="margin: 0; width: 850px">
 		<div id="column1" style="float: left; width: 400px; margin: 0; ">
 			<div id="board1" style="width: 400px; margin: 0;" ></div>
-			<input type="button" id="polishBtn" value="Soklosky Opening" />
-			<input type="button" id="birdBtn" value="Bird's Opening" />
+			<div id="buttons" style="text-align: center; margin-top: 3px;">
+				<input type="button" id="polishBtn" value="Sokolsky Opening" />
+				<input type="button" id="birdBtn" value="Bird's Opening" />
+				<input type="button" id="englishBtn" value="English Opening" />
+			</div>
 		</div>
 	
 		<div id="column2" style="float: left; width: 400px; margin: 0; padding-left: 10px">
-			<p>Blah blah blah. Stuff about chess. Blah blah blah. Stuff about chess. Blah blah blah. Stuff about chess. </p>
+			<p id="message" style="font-size: 20px; font-family: Georgia; margin-top:0;">Hi! This is just a small gallery of the Chess openings that I normally use. <br><br> This is also me messing around with the Chessboard.js library, which can be found <a href="http://chessboardjs.com/">here.</a><br><br> This page is hosted on Github and was created by Daniel Winters. You can visit my site at <a href="www.danielwinters.co.uk">www.danielwinters.co.uk</a></p>
 		</div>
 	</div>
 	<script type="text/javascript">
 		var board1 = new ChessBoard('board1', {movespeed: 'slow', snapspeed: 'slow', draggable: true, position: 'start'});
 		$('#birdBtn').on('click', function(){
 			board1.position('rnbqkb1r/ppp2ppp/4pn2/3p4/2P2P2/4PN2/PP1P2PP/RNBQKB1R w KQkq - 0 1');
+			document.getElementById('message').innerHTML = "Named after Henry Bird who used this opening in the 1800s, The Bird opening's main focus is taking a hold of the central E5 square. <br><br> By moving the F pawn to F4, White threatens any pawn moving into E5, and White's standard follow up move, Knight to F3, threatens both E5 and D4.<br><br> White's standard third move is moving the E pawn to E3, to support the pawn on F4, followed up by moving the C pawn to C4. This pawn is already supported by the white square bishop, thanks to E3, and again tries to control the centre.";
 		});
 		$('#polishBtn').on('click', function(){
-			board1.position('rnbqk1nr/pppp1pBp/8/4p3/1b6/8/P1PPPPPP/RN1QKBNR w KQkq - 0 1');
+			board1.position('r1bqkbnr/pppp1ppp/2n5/1P2p3/8/4P3/P1PP1PPP/RNBQKBNR w KQkq - 0 1');
+			document.getElementById('message').innerHTML = "The Sokolsky opening, also called The Polish Opening and 'The Orangutan Opening', is the most unconvential opening that I use on a normal basis.<br><br> Out of the twenty possible first moves you can make, moving the B pawn up to B4 is ranked 9th out of 20. So why do I play it?<br><br> I use this opening mainly because of it's potential to move the B pawn up to the 5th, and have it defended by the white bishop, within three moves. This works especially well if Black moved his Knight to C6 on their second turn as shown.";
 		});
-
+		$('#englishBtn').on('click', function(){
+			board1.position('r1bqkbnr/ppp2ppp/2np4/4p3/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 1');
+			document.getElementById('message').innerHTML = "The classic English opening, used by a large amount of the world's greatest players. Bobby Fischer, Magnus Carlsen and Gary Kasparov to name just a few. <br><br> Opening by moving the C pawn to C4, the English usually lends itself to a solid opening that can adapt to whatever Black throws at it.<br><br> Whilst it may look quite similar to Bird's opening, albeit on the left side of the board, you have to remember that the Queen happens to be on the left side of the board as well, making it easier to develop her more quickly.";
+		});
 	</script>
 </body>
 </html>
